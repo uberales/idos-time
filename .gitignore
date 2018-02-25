@@ -1,0 +1,7 @@
+*.pyc
+*.json
+*.dat
+*.map
+./dat2map/*.o
+./dat2map/*.mod
+./dat2map/idos-map
