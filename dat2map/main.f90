@@ -1,10 +1,28 @@
+! Creates a map of reachability of a specified public transport 
+! stop (pivot stop) from all locations on 2D grid. 
+! 
+! Takes a few coordinate points with specified reachability, 
+! creates minimal rectangle and covers it with n x m grid, 
+! where n is specified at input and m is calculated using 
+! the rectangle's aspect ratio. The time of travel from 
+! arbitrary point to the pivot stop is calculated as the 
+! minimum of all times needed to walk a straight line + time 
+! of travel from the available stops.
+! 
+! Time complexity of the algorithm is O(n^2 * s), which is 
+! poor. But the Fortran implementation makes it bearable 
+! enough to produce grids 4096 points wide.
+! 
+! Input: list of travel times to specified coordinates, horizontal resolution.
+! Output: 2D map of the reachabilities (and stops, if specified)
+
 program idos
     use getoptions
 
     implicit none
 
     character :: okey
-    character(len=512) :: input_file='stop_map.dat'//char(0), output_file='time_map.dat'//char(0), stops_file='stops_map.dat'//char(0)
+    character(len=512) :: input_file='arrivals_final-fortran.dat'//char(0), output_file='time_map.map'//char(0), stops_file='stops_map.map'//char(0)
     real*8, dimension(:), allocatable :: stop_lat, stop_lon, stop_time
     real*8 :: lat, lon, time
     real*8 :: min_lat, min_lon, max_lat, max_lon, delta_lat, delta_lon, step_lat, step_lon, min_t, att_t
@@ -17,6 +35,7 @@ program idos
     real*8 :: walking_time
 
     draw_stops = .false.
+    res_lon = 256
 
     write(*,*) 'Parsing command line'
 
