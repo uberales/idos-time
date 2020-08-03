@@ -1,4 +1,9 @@
+# notice
+
+Unfortunately, this tool does not work anymore, since the access to the IDOS API was restricted. However, if you have a valid API key, it should be OK. If not, check [https://traveltime.com/] for better UX :) (not mine, I just like the tool). 
+
 # idos-time
+
 A simple tool for visualising Prague public transport time for a selected stop.
 
 IDOS (Chaps) has a public API for Prague public transport (PID; without trains, sadly). You can search for a connection or whatever you'd like. I wanted to see how far can I get from my flat to any place in 30 minutes. So I made this. No guarantee whatsoever is granted.
