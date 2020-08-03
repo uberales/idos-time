@@ -1,6 +1,6 @@
 # notice
 
-Unfortunately, this tool does not work anymore, since the access to the IDOS API was restricted. However, if you have a valid API key, it should be OK. If not, check [https://traveltime.com/] for better UX :) (not mine, I just like the tool). 
+Unfortunately, this tool does not work anymore, since the access to the IDOS API was restricted. However, if you have a valid API key, it should be OK. If not, check https://traveltime.com/ for better UX :) (not mine, I just like the tool). 
 
 # idos-time
 
